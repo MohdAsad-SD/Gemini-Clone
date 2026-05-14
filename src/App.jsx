@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <div className='flex h-screen w-full' >
+    <div className='flex h-dvh overflow-hidden w-full' >
       <Gemini_Sidebar open={open} setopen={setopen}/>
       <Gemini_Main open={open} setopen={setopen}/>
     </div>
