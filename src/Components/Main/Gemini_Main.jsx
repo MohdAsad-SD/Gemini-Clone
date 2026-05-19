@@ -59,9 +59,10 @@ const Gemini_Main = ({open,setopen,message,setmessage,history,sethistory}) => {
       </div>
       <div className='flex-1 flex flex-col mt-8  flex gap-6 flex-col  self-center items-center overflow-y-auto px-5 py-1 w-[100%]  md:w-[50%] overflow-x-hidden'>
         {message.map((msg,index)=>(
-          <div key={index} className={` break-words whitespace-pre-wrap leading-6 md:leading-8 flex rounded-2xl p-5 gap-2  ${msg.type==="user" ? "":"text-start"} ${msg.type==="user" ? "bg-blue-500 self-end":"bg-[#2a2a2a] self-start"} items-center ${msg.type==="user" ? "w-[50%]":"w[100%]"} ${msg.type==="ai" ? "text-white":"text-black"}`}>
+          <div key={index} className={` break-words whitespace-pre-wrap leading-6 md:leading-8 flex rounded-2xl p-5 gap-2  ${msg.type==="user" ? "":"text-start"} ${msg.type==="user" ? "bg-blue-500 self-end":"bg-[#2a2a2a] self-start"} items-center ${msg.type==="user" ? "w-[70%]":"w[100%]"} ${msg.type==="ai" ? "text-white":"text-black"}`}>
             {msg.type==="user" ? <img className=' rounded-full w-8 shrink-0 h-8 self-start' src={user}/>:<img className='rounded-full w-8 shrink-0 h-8 self-start' src={gemini_icon}/>}
-            {msg.text}
+            <p className='text-wrap'>{msg.text}</p>
+            
           </div>
           
         ))}
