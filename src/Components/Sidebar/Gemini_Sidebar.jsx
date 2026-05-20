@@ -10,6 +10,13 @@ const Gemini_Sidebar = ({open,setopen,message,setmessage,history,sethistory,curr
       (chat,i)=> i!==index
     );
     sethistory(updatedhistory);
+    if(currentindex==index){
+      setmessage([]);
+      setcurrentindex(null);
+    }
+    else if(currentindex !== null && index < currentindex){
+      setcurrentindex(currentindex-1);
+    }
   }
   const handlenewchat=()=>{
     if(message.length>0 && currentindex==null){
